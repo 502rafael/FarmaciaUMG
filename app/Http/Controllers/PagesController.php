@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Cliente;
-use App\Producto;
+use App;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
 
     public function detalle($id){
-        $producto = Producto::findOrFail($id);
+        $producto = App\Producto::findOrFail($id);
         return view('productodetalle', compact('producto'));
 
 
@@ -18,7 +18,7 @@ class PagesController extends Controller
 
 public function eliminar($id)
 {
-    $eliminarpro = Producto::findOrFail($id);
+    $eliminarpro = App\Producto::findOrFail($id);
     $eliminarpro->delete();
 
     return back()->with('productoGuardado', 'Producto Eliminado');
@@ -27,7 +27,7 @@ public function eliminar($id)
 }
 
 public function adfarmacia(){
-$producto = Producto::all();
+$producto = App\Producto::all();
 
 
     return view('administrarfarmacia',compact('producto'));
@@ -49,7 +49,7 @@ $producto = Producto::all();
         // Producto::insert($userdata);
         // return back()->with('productoGuardado', 'Producto Guardado');
 
-        $producto = new Producto;
+        $producto = new App\Producto;
         // $producto->cod_pro = $request->cod_pro;
         $producto->nom_pro = $request->nom_pro;
         $producto->imagen = $request->imagen;
@@ -107,7 +107,7 @@ $producto = Producto::all();
         if ($request) {
         $buscarpor = trim($request->get('buscarpor'));
 
-        $product = Producto::where('nom_pro','LIKE' . $buscarpor . '%')
+        $product = App\Producto::where('nom_pro','LIKE' . $buscarpor . '%')
         ->orderBy('cod_pro', 'asc')
         ->get();
 
@@ -125,14 +125,14 @@ $producto = Producto::all();
     
 
     public function productos(){
-        $productos = Producto::all();
+        $productos = App\Producto::all();
         
         return view('productos',compact('productos'));
     }
     
 
     public function detail($id){
-        $producto = Producto::find($id);
+        $producto = App\Producto::find($id);
         
         return view('detail')->with('producto', $producto);
     }
@@ -152,7 +152,7 @@ $producto = Producto::all();
 
 
     public function addToCart($id){
-        $product = Producto::find($id);
+        $product = App\Producto::find($id);
         $cart = session()->get('cart');
 
         if (!$cart) {
@@ -197,7 +197,7 @@ $producto = Producto::all();
 // -------
     public function eliminardelCarrito($id){
         $cart = session()->get('cart');
-        $product = Producto::find($id);
+        $product = App\Producto::find($id);
 
         if (!$cart) {
            
