@@ -26,13 +26,7 @@ public function eliminar($id)
 
 }
 
-public function adfarmacia(){
-$producto = App\Producto::all();
 
-
-    return view('administrarfarmacia',compact('producto'));
-
-}
 
 
 
@@ -141,10 +135,7 @@ $producto = App\Producto::all();
         return view('pagar',compact('total'));
     }
 
-
-
     public function cart(){
-        
         
         return view('cart');
     }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PagesController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,9 +26,9 @@ Route::get('/inicio', function () {
 });
 
 
-Route::get('/administrar', function () {
-    return view('admin');
-});
+// Route::get('/administrar', function () {
+//     return view('admin');
+// });
 
 
 Route::get('productos', 'PagesController@productos')->name('productos');
@@ -57,9 +58,12 @@ Route::get('productodetalle/{id}','PagesController@detalle')->name('productodeta
 
 
 
-Route::get('/adfarmacia','PagesController@adfarmacia');
+Route::get('/adfarmacia','ProductoController@adfarmacia')->name('adfarmacia');
 
 
+Route::get('/detalle','ProductoController@detalle')->name('detalle');
+
+Route::get('/usuarios','ProductoController@usuarios')->name('usuarios');
 
 Route::post('/save','PagesController@save')->name('save');
 
@@ -71,3 +75,8 @@ Route::post('/guardar','PagesController@guardar')->name('guardar');
 
 
 Route::delete('/eliminar/{id}','PagesController@eliminar')->name('productoeliminar');
+Auth::routes();
+
+
+Route::get('/home', 'HomeController@index')->name('home');
+

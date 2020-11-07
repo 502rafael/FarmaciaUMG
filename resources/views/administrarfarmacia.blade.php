@@ -20,7 +20,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-secondary text-left fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#">SALES FORCE</a>
+                <a class="navbar-brand js-scroll-trigger" href="{{ url('inicio') }}">SALES FORCE</a>
                 
                 <button class="navbar-toggler navbar-toggler-left text-left font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
@@ -36,20 +36,22 @@
                         </li>
                         <li class="nav-item mx-0 mx-lg-1">
                             <br>
-                            <a class="nav-link py-3 px-0 px-lg-2 rounded js-scroll-trigger" href="#about">Proveedores</a>
+                            <a class="nav-link py-3 px-0 px-lg-2 rounded js-scroll-trigger" href="{{ url('detalle') }}">Ventas</a>
                         </li>
 
                         <li class="nav-item mx-0 mx-lg-1">
                             <br>
-                            <a class="nav-link py-3 px-0 px-lg-2 rounded js-scroll-trigger" href="#contact">Usuarios</a>
+                            <a class="nav-link py-3 px-0 px-lg-2 rounded js-scroll-trigger" href="{{ url('usuarios') }}">Usuarios</a>
                         </li>
                         
+
                         <li class="nav-item mx-0 mx-lg-1">
                             <br>
-                            <a class="nav-link py-3 px-0 px-lg-2 rounded js-scroll-trigger" href="#"> Vetnas</a>
+                            <a class="nav-link py-3 px-0 px-lg-2 rounded js-scroll-trigger" href="{{ route('home') }}">Salir</a>
                         </li>
 
-                    
+
+{{--                     
                         <li class="nav-item mx-0 mx-lg-1">
                             <br>
                             <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">
@@ -57,7 +59,7 @@
                               </button>
                               
                              
-                        </li>
+                        </li> --}}
                     </ul>
                 </div>
             </div>
@@ -381,14 +383,6 @@
         </section>
 
 
-        <!-- About Section-->
-        <section class="page-section bg-primary text-white mb-0" id="about">
-            <div class="container">
-              <h3>gfdsfgsdfgsdf
-
-              </h3>
-            </div>
-        </section>
 
 
         <!-- Contact Section-->

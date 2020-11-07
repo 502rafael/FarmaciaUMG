@@ -34,7 +34,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item mx-0 mx-lg-1">
+                        {{-- <li class="nav-item mx-0 mx-lg-1">
                             <br>
                             <div class="input-group mb-3">
 
@@ -58,7 +58,7 @@
                                 
                                 
                             </div>
-                        </li>
+                        </li> --}}
                         <li class="nav-item mx-0 mx-lg-1">
                             <br>
                             <a class="nav-link py-3 px-0 px-lg-2 rounded js-scroll-trigger" href="#portfolio">Promociones</a>
@@ -83,7 +83,10 @@
                             <br>
                             <a class="nav-link py-3 px-0 px-lg-2 rounded js-scroll-trigger" href="{{ url('cart') }}">Carrito</a>
                         </li>
-                    
+                        <li class="nav-item mx-0 mx-lg-1">
+                            <br>
+                            <a class="nav-link py-3 px-0 px-lg-2 rounded js-scroll-trigger" href="{{ url('adfarmacia') }}">Admin</a>
+                        </li>
                         {{-- <li class="nav-item mx-0 mx-lg-1">
                             <br>
                             <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">

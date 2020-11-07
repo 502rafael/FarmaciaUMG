@@ -14,9 +14,7 @@
 
 </head>
 <body>
-    
-
-            
+     
         <div class="jumbotron">
                 <br>
                 <h3 class="text-xl-center display-4" >DATOS DE PAGO</h3>
@@ -31,6 +29,7 @@
                 <h4 class="text-xl-center">Total a Pagar: {{ $total }}</h4>
                 <br>
                 <br>
+
                 <div id="paypal-button-container" class="text-xl-center"></div>
 
         </div>
@@ -48,7 +47,6 @@
                 return actions.order.create({
                     purchase_units: [{
                         amount: {
-                            
                             value: '0.01'
                         }
                     }]
@@ -58,7 +56,7 @@
             // Finalize the transaction
             onApprove: function(data, actions) {
                 return actions.order.capture().then(function(details) {
-                    // Show a success message to the buyer
+                   
                     alert('Transaction completed by ' + details.payer.name.given_name + '!');
                 });
             }
